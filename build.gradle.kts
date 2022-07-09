@@ -1,6 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
+    jacoco
     kotlin("jvm") version "1.7.0"
 }
 
@@ -12,11 +13,9 @@ repositories {
 }
 
 dependencies {
-    testImplementation(kotlin("test"))
-}
+    // https://mvnrepository.com/artifact/junit/junit
+    testImplementation("junit:junit:4.13.2")
 
-tasks.test {
-    useJUnitPlatform()
 }
 
 tasks.withType<KotlinCompile> {
